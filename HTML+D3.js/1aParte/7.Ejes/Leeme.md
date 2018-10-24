@@ -1,0 +1,1 @@
+Otro de los elementos que se van a encontrar en casi todos los gráficos serán los ejes. En este diorectorio se muestra un ejemplo de cómo se generan éstos.

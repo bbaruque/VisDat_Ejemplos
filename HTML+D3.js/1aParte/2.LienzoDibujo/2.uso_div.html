@@ -1,0 +1,26 @@
+<!-- Ejemplo que permite comprobar como D3 permite modificar el arbol DOM de 
+una pagina para incluir un div y, dentro de éste, elementos de dibujo / texto. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Anadir Elementos</title>
+        <script type="text/javascript" src="../d3/d3.min.js"></script> <!-- Trabajando con la versión 5 -->
+    </head>
+    <body>
+        <script type="text/javascript">
+            /*
+            El código es equivalente al que aparece en index1.html
+            Realmente es bastante más farragoso.
+             Sin embargo, habrá veces cuando será necesario romper la cadena,
+            como cuando se hacen llamadas a tantas funciones que no vale la pena encadenarlas todas. 
+            O simplemente porque puede ser mejor organizar el código de una manera 
+            que tenga mayor sentido para quien lo está elaborando.
+            */
+            var body = d3.select("body");
+            var d = body.append("div");
+            var p = d.append("p");
+            p.text("Hemos insertado el parrafo desde D3");
+        </script>
+    </body>
+</html>

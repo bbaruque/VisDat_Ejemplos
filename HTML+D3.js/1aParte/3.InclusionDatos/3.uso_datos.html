@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Usar Datos</title>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script> <!-- Trabajando con la versión 5 -->
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            var dataset = [ 5, 10, 15, 20, 25];
+
+            d3.select("body").selectAll("p")
+	        .data(dataset)
+	        .enter()
+	        .append("p")
+                .text(function(d){
+                        return "Puedo contar hasta " + d;
+                    }) // Tambien se puede modificar el estilo en funcion de los datos
+                .style("color", function(d) {
+                    if (d > 15) {   //Umbral - 15
+                        return "red";
+                    } else {
+                        return "black";
+                    }
+                });
+
+        </script>
+    </body>
+</html>

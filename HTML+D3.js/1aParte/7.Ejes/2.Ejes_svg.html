@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Diagrama de Barras con SVG</title>
+        <script type="text/javascript" src="../d3/d3.min.js"></script> <!-- Trabajando con la versión 5 -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <script type="text/javascript">
+
+            var w = 300;
+            var h = 200;
+            var barPadding = 1;  // <-- Nueva linea
+
+            // En este ejemplo, los datos se generan de forma aleatoria
+             var dataset = []
+             for (i=0;i<15; i++){
+                dataset.push(Math.random()*25);
+             }
+
+            // Definimos las escalas del gráfico
+            var xScale = d3.scaleLinear()
+                .domain([0, dataset.length])
+                .range([0, w-50]);
+
+            var yScale = d3.scaleLinear()
+                .domain([0, d3.max(dataset)])
+                .range([h+20, 0]);
+
+            var x_axis = d3.axisBottom()
+            .scale(xScale);
+
+            var y_axis = d3.axisLeft()
+            .scale(yScale);
+
+            // Se incluye el lienzo SVG, incluyendo su altura y anchura
+            var svg = d3.select("body")
+	        .append("svg")
+                .attr("width", w)
+                .attr("height",h);
+
+            svg.append("g")
+                .attr("transform", "translate(50, 10)")
+                .call(y_axis);
+                    
+            var xAxisTranslate = h - 20;
+                    
+            svg.append("g")
+                .attr("transform", "translate(50, " + xAxisTranslate  +")")
+                .call(x_axis);
+
+            // Se incluye una barra por cada dato
+            svg.selectAll("rect")
+            .data(dataset)
+            .enter()
+                .append("rect") // Forma de rectangulo
+                // Para la colocacion de cada barra en el eje x
+                .attr("x", function(d,i) {
+                    return 50 + xScale(i);
+                })
+                // Para la colocacion de cada barra en el eje y
+                .attr("y", function(d) {
+                    return xAxisTranslate - yScale(d);
+                })
+                // Para ajustarse al espacio que le queda a lo ancho
+                .attr("width", w / dataset.length - barPadding) // La anchura de cada barra será el espacio en el gráfico dividido por el numero de barras a representar
+                .attr("height", function(d) {
+                    return yScale(d);
+                });// Altura en funcion del dato a representar
+                
+        </script>
+    </body>
+</html>

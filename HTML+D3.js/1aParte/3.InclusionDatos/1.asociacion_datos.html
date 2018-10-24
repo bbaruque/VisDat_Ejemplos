@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Asociar Datos</title>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script> <!-- Trabajando con la versión 5 -->
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            var dataset = [ 5, 10, 15, 20, 25];
+
+            d3.select("body").selectAll("p")
+	        .data(dataset) // Las funciones que cuelgan de la función data se ejecutan una vez para cada dato
+	        .enter()
+	        .append("p")
+	            .text("New paragraph!");
+            // Aparecen 5 párrafos al contener el vector 5 datos (uno por vector)
+
+            // Para comprender bien su funcionamiento, se sugiere la lectura: https://bost.ocks.org/mike/join/
+
+        </script>
+    </body>
+</html>

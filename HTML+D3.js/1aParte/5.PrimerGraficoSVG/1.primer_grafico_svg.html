@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Despliegue SVG</title>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+
+        <style media="screen" type="text/css">
+            svg .pumpkin {
+                fill: yellow;
+                stroke: orange;
+                /* stroke-width: 5; */
+            }
+        </style>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            
+            var w = 500;
+            var h = 100;
+
+            var svg = d3.select("body").append("svg");
+                svg.attr("width", w).attr("height", h);
+
+
+            var dataset = [ 5, 10, 15, 20, 25 ];
+
+            var circles = svg.selectAll("circle")
+                .data(dataset)
+                .enter()
+                    .append("circle")
+                    .attr("cx", function(d, i){
+                        return (i * 50) + 25
+                        } )
+                    .attr("cy", h/2)
+                    .attr("r", function(d){
+                        return d;
+                    })
+                    .attr("class","pumpkin")
+                    .attr("stroke-width", function(d){
+                        return d/2;
+                    })
+
+        </script>
+    </body>
+</html>

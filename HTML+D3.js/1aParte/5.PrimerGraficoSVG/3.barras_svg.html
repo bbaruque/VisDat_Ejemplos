@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Diagrama de Barras con SVG</title>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script> <!-- Trabajando con la versión 5 -->
+    </head>
+
+    <body>
+
+        <script type="text/javascript">
+
+            var w = 300;
+            var h = 200;
+            var barPadding = 1;  // <-- Nueva!
+
+            // var dataset = [ 5, 10, 15, 20, 25];
+
+             var dataset = []
+             for (i=0;i<15; i++){
+                dataset.push(Math.round(Math.random()*25));
+             }
+
+            var svg = d3.select("body")
+	        .append("svg")
+            .attr("width", w)
+            .attr("height",h);
+
+            svg.selectAll("rect")
+            .data(dataset)
+            .enter()
+                .append("rect") // Forma de rectangulo
+                // Para la colocacion de cada barra en el eje x
+                .attr("x", function(d,i){ // d: dato, i:numero de dato (equivalente a su indice o posicion si estuvieran en un vector)
+                    return (i * w/dataset.length); 
+                })  // La barra se colocará desplazada tantas veces su anchura como barras se hayan colocado antes que ella
+                // Para la colocacion de cada barra en el eje y
+                .attr("y", function(d) {
+                    return h - (d*5);  //Altura menos el dato. OJO: en D3 el punto de referencia es la esquina superior izquierda (son las coordenadas [0, 0])
+                })
+                // Para ajustarse al espacio que le queda a lo ancho
+                .attr("width", w / dataset.length - barPadding) // La anchura de cada barra será el espacio en el gráfico dividido por el numero de barras a representar
+                .attr("height", function(d){
+                    return d*5; // Altura en funcion del dato a representar
+                })
+                .attr("fill", function(d) { // Color de la barra en función del dato
+                    return "rgb(0, 0, " + (d * 10) + ")";
+                });
+
+            //// Etiquetas ////
+            svg.selectAll("text")
+                .data(dataset)
+                .enter()
+                    .append("text")
+                    .text(function(d){
+                        return d; // Como texto se coloca 
+                    })
+                    .attr("x", function(d,i){
+                        return (i*w/dataset.length); // Para ajustarse por lo ancho
+                    })
+                    .attr("y", function(d) {
+                        return h - (d*5) - 3;  //Altura menos el dato * 5 (y 3 pixels por encima)
+                    })
+
+        </script>
+    </body>
+</html>

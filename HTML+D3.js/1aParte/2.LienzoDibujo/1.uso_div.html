@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Test</title>
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script> <!-- Trabajando con la versión 5 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+</head>
+<body>
+    <script type="text/javascript">
+        /* Podemos ver como se añaden elementos por medio del encadenamiento de métodos.
+        Secuencialmente:
+        1. Se invocó el método select de D3, el cual selecciona un solo elemento en el DOM utilizando la sintaxis del selector en CSS. (En este caso se utilizó body).
+        2. Se creó un nuevo elemento p y se añadió al final de la selección, o sea justo antes de la etiqueta de cierre -body- en este caso.
+        3. Se actualizó el contenido del párrafo vacío con la frase
+        */
+        d3.select(“body”).append(“p”).text(“Hemos insertado el párrafo desde D3”);
+    </script>
+</body>
+</html>  

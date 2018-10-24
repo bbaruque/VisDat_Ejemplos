@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Desplegar Divs</title>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script> <!-- Trabajando con la versión 5 -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <!-- Se incluye inicialmente un div con un fondo de color de forma estatica. 
+        Esto se hace como prueba. -->
+        <!-- Este ejemplo muestra algo que no se debe hacer. Usualmente, no se debe 
+        usar un div vacío para efectos visuales únicamente, sin embargo para efectos
+        de este tutorial se puede hacer la excepción. -->
+        <div style="display: inline-block;
+            width: 20px;
+            height: 75px;
+            background-color:bisque;">
+        </div>
+
+        <!-- Al lado del div inicial, se añaden nuevos div, que tienen otro color de fondo 
+        Todos son iguales, al tener todos los mismos atributos. -->
+        <script type="text/javascript">
+
+            var dataset = [ 5, 10, 15, 20, 25];
+
+            d3.select("body").selectAll("div")
+	        .data(dataset)
+	        .enter()
+	            .append("div")
+                .attr("class","bar"); // Definida en el css
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1 @@
+Una de las herramientas más útiles de D3.js es la de las escalas. Permite ajustar el gráfico que se está generando al tamaño del lienzo que se añade al HTML, sin necesidad de tener que re-calcular tamaños dentro del dibujo.

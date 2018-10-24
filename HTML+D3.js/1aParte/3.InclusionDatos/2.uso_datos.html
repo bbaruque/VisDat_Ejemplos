@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Usar Datos</title>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script> <!-- Trabajando con la versión 5 -->
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            var dataset = [ 5, 10, 15, 20, 25];
+
+            d3.select("body").selectAll("p")
+	        .data(dataset) // Lo que aparezca detrás de la funcion Data
+	        .enter()
+            .append("p")
+            // Se emplea una funcion lambda que emplea cada uno de los datos facilitados
+	            .text(function(d){
+                    return "Puedo contar hasta " + d;
+                    });
+
+        </script>
+    </body>
+</html>
