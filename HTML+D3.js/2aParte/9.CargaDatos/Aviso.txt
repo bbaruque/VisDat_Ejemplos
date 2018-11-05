@@ -1,0 +1,9 @@
+La función de carga de datos no funciona al obtenerlos directamente de un directorio local.
+
+Para evitar este problema, la página web debe servirse desde un servidor web.
+La opción más directa es:
+1.- Abrir la linea de comandos
+2.- Navegar hasta el directorio donde se encuentre el fichero a probar
+3.- Ejecutar el comado de pyton (v.3+): python -m http.server
+Esto ejecuta un servidor web en miniatura, que resulta muy útil en este tipo de pruebas.
+4.- Acceder, en el navegador, a http://0.0.0.0:8000/index.html o http://localhost:8000/index.html
