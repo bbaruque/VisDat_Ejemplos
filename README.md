@@ -1,8 +1,6 @@
-![Escudo UBU](http://www.ubu.es/sites/default/files/portal_page/images/escudo_color_1l_dcha.jpg =100x20)
-
-![Escudo UVA](https://www.vectorlogo.es/wp-content/uploads/2014/12/logo-vector-universidad-valladolid.jpg)
-
-![Escudo ULE](https://www.vectorlogo.es/wp-content/uploads/2014/12/logo-vector-universidad-leon-escudo.jpg)
+<img src="http://www.ubu.es/sites/default/files/portal_page/images/escudo_color_1l_dcha.jpg" alt="Escudo UBU" width="200"/>
+<img src="https://www.vectorlogo.es/wp-content/uploads/2014/12/logo-vector-universidad-valladolid.jpg" alt="Escudo UVA" width="200"/>
+<img src="https://www.vectorlogo.es/wp-content/uploads/2014/12/logo-vector-universidad-leon-escudo.jpg" alt="Escudo ULEON" width="200"/>
 
 ### Máster Universitario Online en Inteligencia de Negocio y Big Data en Entornos Seguros
 
