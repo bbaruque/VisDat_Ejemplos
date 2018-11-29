@@ -1,4 +1,4 @@
-![Escudo UBU](http://www.ubu.es/sites/default/files/portal_page/images/escudo_color_1l_dcha.jpg)
+![Escudo UBU](http://www.ubu.es/sites/default/files/portal_page/images/escudo_color_1l_dcha.jpg =100x20)
 
 ![Escudo UVA](https://www.vectorlogo.es/wp-content/uploads/2014/12/logo-vector-universidad-valladolid.jpg)
 
