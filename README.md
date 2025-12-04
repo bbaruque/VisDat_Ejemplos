@@ -8,6 +8,6 @@ impartido por las universidades:
 
  <a href="http://www.uva.es/"><img src="https://www.vectorlogo.es/wp-content/uploads/2014/12/logo-vector-universidad-valladolid.jpg" alt="Escudo UVA" width="200"/></a> 
 
-<a href="http://www.ubu.es/"><img src="http://www.ubu.es/sites/default/files/portal_page/images/escudo_color_1l_dcha.jpg" alt="Escudo UBU" width="200"/></a> 
+<a href="http://www.ubu.es/"><img src="https://www.ubu.es/sites/default/files/2025-04/UBU_logo_0_5.svg" alt="Escudo UBU" width="200"/></a> 
 
 <a href="https://www.unileon.es/"><img src="https://www.unileon.es/ficheros/informacion_general/id_visual_corporativa/escudo_oficial/escudo-txtderecha.jpg" alt="Escudo UNILEON" width="200"/></a> 
